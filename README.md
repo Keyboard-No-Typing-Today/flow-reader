@@ -36,19 +36,6 @@ pnpm build
 
 ```bash
 pnpm start
-
-```bash
-pnpm dev
-```
-
-## Self-hosting
-
-Before self-hosting, you should [setup the environment variables](#setup-the-environment-variables).
-
-### Docker
-
-You can use docker-compose:
-
 ```
 
 应用将在 `http://localhost:3000` 上运行。
