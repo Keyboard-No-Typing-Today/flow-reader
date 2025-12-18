@@ -16,7 +16,7 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@flow/reader/*": ["apps/reader/src/*"],
+      "@flow/reader/*": ["apps/src/*"],
       "@flow/internal": ["packages/internal/src/index.ts"],
       "@flow/epubjs/*": ["packages/epubjs/*"]
     }

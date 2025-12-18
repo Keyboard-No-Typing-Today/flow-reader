@@ -1,52 +1,41 @@
-<h1 align="center"><a href="https://flowoss.com">Flow - Open Source Software (OSS)</a></h1>
+# Flow Reader
 
-<h2 align="center">Redefine ePub reader</h2>
+一个基于 Next.js 的 ePub 阅读器 Web 应用。
 
-<p align="center">Free. Open source. Browser-based.</p>
+## 功能特性
 
-<p align="center"><img src="apps/website/public/screenshots/01.webp"/>
+- 网格布局
+- 书内搜索
+- 图片预览
+- 自定义排版
+- 高亮和注释
+- 主题切换
+- 数据导出
+- 云存储支持
 
-</p>
+## 快速开始
 
-## Features
+### 环境要求
 
-- Grid layout
-- Search in book
-- Image preview
-- Custom typography
-- Highlight and Annotation
-- Theme
-- Share/Download book with link
-- Data export
-- Cloud storage
+- Node.js >= 18.0.0
+- pnpm 包管理器
 
-For planed features, see our [roadmap](https://pacexy.notion.site/283696d0071c43bfb03652e8e5f47936?v=b43f4dd7a3cb4ce785d6c32b698a8ff5).
-
-## Development
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org)
-- [pnpm](https://pnpm.io/installation)
-- [Git](https://git-scm.com/downloads)
-
-### Clone the repo
+### 安装依赖
 
 ```bash
-git clone https://github.com/pacexy/flow
+pnpm install
 ```
 
-### Install the dependencies
+### 构建生产版本
 
 ```bash
-pnpm i
+pnpm build
 ```
 
-### Setup the environment variables
+### 运行生产版本
 
-Copy and rename all `.env.local.example`s to `.env.local` and setup the environment variables.
-
-### Run the apps
+```bash
+pnpm start
 
 ```bash
 pnpm dev
@@ -60,29 +49,41 @@ Before self-hosting, you should [setup the environment variables](#setup-the-env
 
 You can use docker-compose:
 
-```sh
-docker compose up -d
 ```
 
-Or build the image and run it manually:
+应用将在 `http://localhost:3000` 上运行。
 
-```sh
-docker build -t flow .
-docker run -p 3000:3000 --env-file apps/reader/.env.local flow
+## 项目结构
+
+```
+flow/
+├── apps/                # Reader 应用（Next.js）
+│   ├── src/             # 源代码
+│   ├── public/          # 静态资源
+│   └── .next/           # 构建输出（生成后）
+├── packages/
+│   ├── epubjs/              # ePub 阅读器引擎
+│   ├── internal/            # 内部共享工具
+│   └── tailwind/            # Tailwind 配置
+└── package.json             # 根配置
 ```
 
-## Contributing
+## 技术栈
 
-There are many ways in which you can participate in this project, for example:
+- **Next.js 12** - React 框架
+- **React 18** - UI 库
+- **Epub.js** - ePub 渲染引擎
+- **Tailwind CSS** - 样式框架
+- **Dexie** - IndexedDB 封装
+- **Recoil** - 状态管理
+- **Turborepo** - Monorepo 工具
 
-- [Submit bugs and feature requests](https://github.com/pacexy/flow/issues/new), and help us verify as they are checked in
-- [Submit pull requests](https://github.com/pacexy/flow/pulls)
+## 部署
 
-## Credits
+构建完成后，可以通过以下方式部署：
 
-- [Epub.js](https://github.com/futurepress/epub.js/)
-- [React](https://github.com/facebook/react)
-- [Next.js](https://nextjs.org/)
-- [TypeScript](https://www.typescriptlang.org)
-- [Vercel](https://vercel.com)
-- [Turborepo](https://turbo.build/repo)
+1. **使用 Node.js 服务器**：运行 `pnpm start`
+
+## License
+
+参见 LICENSE 文件。
